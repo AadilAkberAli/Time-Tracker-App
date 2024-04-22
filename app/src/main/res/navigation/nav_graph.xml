@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.timetracker.main.Fragments.MainFragment"
+        android:label="Usage Fragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_planFragment"
+            app:destination="@id/planFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_reminderFragment"
+            app:destination="@id/reminderFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/planFragment"
+        android:name="com.example.timetracker.main.Fragments.PlanFragment"
+        android:label="Plan Fragment"
+        tools:layout="@layout/fragment_plan" />
+
+    <fragment
+        android:id="@+id/reminderFragment"
+        android:name="com.example.timetracker.main.Fragments.ReminderFragment"
+        android:label="Reminder Fragment"
+        tools:layout="@layout/fragment_reminder" />
+
+</navigation>

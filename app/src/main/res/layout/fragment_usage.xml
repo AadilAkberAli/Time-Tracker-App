@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/dailyTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:visibility="visible"
+        android:textSize="18dp"
+        android:text = "Apps used in last 24 hours"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id = "@+id/appDataCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="5dp"
+        app:cardBackgroundColor="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/dailyTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation = "vertical"
+            >
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerViewAppData"
+                android:layout_marginLeft="5dp"
+                android:visibility="visible"
+                android:textSize="20dp"
+                android:text = "Total Time Spend:"
+                />
+
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor ="@color/black"
+                android:textStyle="bold"
+                android:gravity = "center"
+                android:visibility="gone"
+                android:textSize="25dp"
+                android:text = "Hello World"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <ProgressBar
+        android:id = "@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appDataCardView"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewRecyclerView"
+        ></ProgressBar>
+
+    <androidx.cardview.widget.CardView
+        android:id = "@+id/cardViewRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAppData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
